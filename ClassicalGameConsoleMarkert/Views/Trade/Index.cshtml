@@ -1,0 +1,35 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Книжный магазин</title>
+</head>
+<body>
+    <div>
+        <h3>Товар</h3>
+        <table>
+            <tr>
+                <td><p>Номер</p></td>
+                <td><p>Название</p></td>
+                <td><p>Цена</p></td>
+                <td></td>
+            </tr>
+            @foreach (var item in ViewBag.Items)
+            {
+                <tr>
+                    <td><p>@item.ItemID</p></td>
+                    <td><p>@item.Name</p></td>
+                    <td><p>@item.Price</p></td>
+                    <td><p><a href="/Trade/Buy/@item.ItemID">Купить</a></p></td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
